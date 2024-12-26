@@ -3,7 +3,12 @@ public class LinkedList {
     private Node tail;
     private int length;
 
-    // Will create constructor here
+    public LinkedList(int value) {
+        Node newNode = new Node(value);
+        head = newNode;
+        tail = newNode;
+        length = 1;
+    }
 
     class Node {
         int value;
@@ -25,7 +30,7 @@ public class LinkedList {
     public void printList() {
         Node temp = head;
         while (temp != null) {
-            System.out.println(temp);
+            System.out.println(temp.value);
             temp = temp.next;
         }
     }
