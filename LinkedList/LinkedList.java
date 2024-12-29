@@ -10,6 +10,9 @@ public class LinkedList {
         length = 1;
     }
 
+    public LinkedList() {
+    }
+
     class Node {
         int value;
         Node next;
@@ -27,6 +30,20 @@ public class LinkedList {
         return tail;
     }
 
+    public void append(int value) {
+        Node newNode = new Node(value);
+        if (length > 0) {
+            tail.next = newNode;
+            tail = newNode;
+        } else {
+            head = newNode;
+            tail = newNode;
+        }
+
+        ++length;
+        System.out.println("\nAppended new node of value " + value);
+    }
+
     public void printList() {
         Node temp = head;
         while (temp != null) {
@@ -37,10 +54,10 @@ public class LinkedList {
 
     public void printAll() {
         if (length == 0) {
-            System.out.println("Head: null");
+            System.out.println("\nHead: null");
             System.out.println("Tail: null");
         } else {
-            System.out.println("Head: " + head.value);
+            System.out.println("\nHead: " + head.value);
             System.out.println("Tail: " + tail.value);
         }
         System.out.println("Length: " + length);
