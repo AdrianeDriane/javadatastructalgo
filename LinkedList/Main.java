@@ -15,16 +15,7 @@ public class Main {
         linkedList.append(8);
         linkedList.printAll();
 
-        linkedList.removeLast();
-        linkedList.printAll();
-        linkedList.removeLast();
-        linkedList.printAll();
-        linkedList.removeLast();
-        linkedList.printAll();
-        linkedList.removeLast();
-        linkedList.printAll();
-
-        linkedList.removeLast();
+        linkedList.prepend(14);
         linkedList.printAll();
     }
 }
