@@ -12,10 +12,16 @@ public class Main {
         linkedList.append(6);
         linkedList.printAll();
 
-        linkedList.append(8);
+        linkedList.removeFirst();
         linkedList.printAll();
 
-        linkedList.prepend(14);
+        linkedList.removeFirst();
+        linkedList.printAll();
+
+        linkedList.removeFirst();
+        linkedList.printAll();
+
+        linkedList.removeFirst();
         linkedList.printAll();
     }
 }

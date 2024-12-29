@@ -46,7 +46,7 @@ public class LinkedList {
 
     public Node removeLast() {
         if (length == 0) {
-            System.out.println("\nTried to remove last Node but LinkedList has no Node");
+            System.out.println("\nTried to remove last Node but LinkedList is empty");
             return null;
         }
 
@@ -80,6 +80,25 @@ public class LinkedList {
         }
         ++length;
         System.out.println("\nPrepending Node with value " + value);
+    }
+
+    public Node removeFirst() {
+        if (length == 0) {
+            System.out.println("\nTried to remove first Node but LinkedList is empty");
+            return null;
+        }
+
+        Node temp = head;
+        head = head.next;
+        --length;
+
+        if (length == 0) {
+            head = null;
+            tail = null;
+        }
+
+        System.out.println("\nRemoved first Node with value " + temp.value);
+        return temp;
     }
 
     public void printList() {
