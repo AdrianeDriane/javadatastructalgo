@@ -9,7 +9,7 @@ public class Main {
 
         linkedList.printAll();
 
-        System.out.println(linkedList.remove(4));
+        linkedList.reverse();
         linkedList.printAll();
     }
 }
