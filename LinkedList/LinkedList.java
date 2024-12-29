@@ -131,7 +131,7 @@ public class LinkedList {
 
     public boolean insert(int index, int value) {
         if (index < 0 || index > length) {
-            System.out.println("Tried to get insert at index " + index + " but is out of bounds");
+            System.out.println("Tried to insert at index " + index + " but is out of bounds");
             return false;
         }
 
@@ -154,6 +154,31 @@ public class LinkedList {
 
         System.out.println("Inserting Node of index " + index + " with value " + newNode.value);
         return true;
+    }
+
+    public Node remove(int index) {
+        if (index < 0 || index >= length) {
+            System.out.println("Tried to remove at index " + index + " but is out of bounds");
+            return null;
+        }
+
+        if (index == 0) {
+            return removeFirst();
+        }
+
+        if (index == length - 1) {
+            return removeLast();
+        }
+
+        Node prev = get(index - 1);
+        Node temp = prev.next;
+
+        prev.next = temp.next;
+        temp.next = null;
+        --length;
+
+        System.out.println("removing Node of index " + index);
+        return temp;
     }
 
     public void printList() {
