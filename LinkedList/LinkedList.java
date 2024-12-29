@@ -116,6 +116,24 @@ public class LinkedList {
         return temp;
     }
 
+    public boolean set(int index, int value) {
+        if (index < 0 || index >= length) {
+            System.out.println("Tried to set value of Node with index " + index + " but is out of bounds");
+            return false;
+        }
+
+        Node temp = head;
+
+        for (int i = 0; i < index; ++i) {
+            temp = temp.next;
+        }
+
+        temp.value = value;
+
+        System.out.println("Setting Node of index " + index + " with value " + temp.value);
+        return true;
+    }
+
     public void printList() {
         Node temp = head;
         while (temp != null) {

@@ -8,7 +8,7 @@ public class Main {
 
         linkedList.printAll();
 
-        System.out.println();
-        System.out.println(linkedList.get(2));
+        System.out.println(linkedList.set(0, 3));
+        linkedList.printAll();
     }
 }
