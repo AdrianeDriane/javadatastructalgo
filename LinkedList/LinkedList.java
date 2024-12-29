@@ -94,7 +94,6 @@ public class LinkedList {
         --length;
 
         if (length == 0) {
-            head = null;
             tail = null;
         }
 
