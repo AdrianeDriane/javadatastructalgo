@@ -101,6 +101,21 @@ public class LinkedList {
         return temp;
     }
 
+    public Node get(int index) {
+        if (index < 0 || index >= length) {
+            System.out.println("Tried to get Node of index " + index + " but is out of bounds");
+            return null;
+        }
+
+        Node temp = head;
+        for (int i = 0; i < index; ++i) {
+            temp = temp.next;
+        }
+
+        System.out.println("Getting Node of index " + index + " with value " + temp.value);
+        return temp;
+    }
+
     public void printList() {
         Node temp = head;
         while (temp != null) {
