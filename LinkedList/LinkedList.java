@@ -44,6 +44,30 @@ public class LinkedList {
         System.out.println("\nAppended new node of value " + value);
     }
 
+    public Node removeLast() {
+        if (length == 0) {
+            System.out.println("\nTried to remove last Node but LinkedList has no Node");
+            return null;
+        }
+
+        Node temp = head;
+        Node pre = head;
+        while (temp.next != null) {
+            pre = temp;
+            temp = temp.next;
+        }
+        tail = pre;
+        tail.next = null;
+        --length;
+        if (length == 0) {
+            head = null;
+            tail = null;
+        }
+
+        System.out.println("\nRemoved last Node with value " + temp.value);
+        return temp;
+    }
+
     public void printList() {
         Node temp = head;
         while (temp != null) {
