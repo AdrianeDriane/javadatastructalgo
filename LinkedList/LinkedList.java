@@ -90,6 +90,7 @@ public class LinkedList {
 
         Node temp = head;
         head = head.next;
+        temp.next = null;
         --length;
 
         if (length == 0) {
