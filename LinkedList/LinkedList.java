@@ -129,6 +129,33 @@ public class LinkedList {
         return false;
     }
 
+    public boolean insert(int index, int value) {
+        if (index < 0 || index > length) {
+            System.out.println("Tried to get insert at index " + index + " but is out of bounds");
+            return false;
+        }
+
+        if (index == 0) {
+            prepend(value);
+            return true;
+        }
+
+        if (index == length) {
+            append(value);
+            return true;
+        }
+
+        Node newNode = new Node(value);
+
+        Node temp = get(index - 1);
+        newNode.next = temp.next;
+        temp.next = newNode;
+        ++length;
+
+        System.out.println("Inserting Node of index " + index + " with value " + newNode.value);
+        return true;
+    }
+
     public void printList() {
         Node temp = head;
         while (temp != null) {
