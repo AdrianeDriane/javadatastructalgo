@@ -222,4 +222,21 @@ public class LinkedList {
             printList();
         }
     }
+
+    public Node findMiddleNode() {
+        if (head == null)
+            return null;
+
+        Node tortoise = head;
+        Node hare = head;
+
+        while (hare.next != null) {
+            tortoise = tortoise.next;
+            hare = hare.next.next;
+            if (hare == null)
+                break;
+        }
+
+        return tortoise;
+    }
 }

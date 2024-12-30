@@ -6,10 +6,8 @@ public class Main {
         linkedList.append(3);
         linkedList.append(23);
         linkedList.append(7);
+        linkedList.append(11);
 
-        linkedList.printAll();
-
-        linkedList.reverse();
-        linkedList.printAll();
+        System.out.println(linkedList.findMiddleNode().value);
     }
 }
