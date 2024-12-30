@@ -243,17 +243,16 @@ public class LinkedList {
     public boolean hasLoop() {
         Node slow = head;
         Node fast = head;
-        boolean isLoopExistent = false;
 
-        for (int i = 0; i < length && fast != null && fast.next != null; ++i) {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
 
             if (slow == fast) {
-                isLoopExistent = true;
+                return true;
             }
         }
 
-        return isLoopExistent;
+        return false;
     }
 }
