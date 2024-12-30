@@ -239,4 +239,21 @@ public class LinkedList {
 
         return tortoise;
     }
+
+    public boolean hasLoop() {
+        Node slow = head;
+        Node fast = head;
+        boolean isLoopExistent = false;
+
+        for (int i = 0; i < length && fast != null && fast.next != null; ++i) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast) {
+                isLoopExistent = true;
+            }
+        }
+
+        return isLoopExistent;
+    }
 }
