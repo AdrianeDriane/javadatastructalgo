@@ -258,20 +258,52 @@ public class LinkedList {
 
     // k = 2
     // 1 -> 2 -> 3 -> &4 -> 5 -> *
-	public Node findKthFromEnd(int k) {
-	    Node hare = head;
-	    Node tortoise = head;
-	    
-	    for(int i = 0; i < k; i++){
-	        if(hare == null) return null;
-	        hare = hare.next;
-	    }
-	    
-	    while(hare != null){
-	        hare = hare.next;
-	        tortoise = tortoise.next;
-	    }
-	    
-	    return tortoise;
-	}
+    public Node findKthFromEnd(int k) {
+        Node hare = head;
+        Node tortoise = head;
+
+        for (int i = 0; i < k; i++) {
+            if (hare == null)
+                return null;
+            hare = hare.next;
+        }
+
+        while (hare != null) {
+            hare = hare.next;
+            tortoise = tortoise.next;
+        }
+
+        return tortoise;
+    }
+
+    public void partitionList(int x) {
+        if (head == null)
+            return;
+
+        Node belowXFirstDummy = new Node(0);
+        Node aboveXFirstDummy = new Node(0);
+
+        Node belowXLast = belowXFirstDummy;
+        Node aboveXLast = aboveXFirstDummy;
+
+        Node current = head;
+
+        while (current != null) {
+            if (current.value < x) {
+                belowXLast.next = current;
+                belowXLast = current;
+            } else {
+                aboveXLast.next = current;
+                aboveXLast = current;
+            }
+
+            current = current.next;
+        }
+
+        aboveXLast.next = null;
+
+        belowXLast.next = aboveXFirstDummy.next;
+
+        head = belowXFirstDummy.next;
+    }
 }
