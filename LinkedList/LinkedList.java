@@ -255,4 +255,23 @@ public class LinkedList {
 
         return false;
     }
+
+    // k = 2
+    // 1 -> 2 -> 3 -> &4 -> 5 -> *
+	public Node findKthFromEnd(int k) {
+	    Node hare = head;
+	    Node tortoise = head;
+	    
+	    for(int i = 0; i < k; i++){
+	        if(hare == null) return null;
+	        hare = hare.next;
+	    }
+	    
+	    while(hare != null){
+	        hare = hare.next;
+	        tortoise = tortoise.next;
+	    }
+	    
+	    return tortoise;
+	}
 }
