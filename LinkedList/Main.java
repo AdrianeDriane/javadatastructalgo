@@ -8,6 +8,6 @@ public class Main {
         linkedList.append(7);
         linkedList.append(11);
 
-        System.out.println(linkedList.findMiddleNode().value);
+        System.out.println(linkedList.hasLoop());
     }
 }
