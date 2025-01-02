@@ -258,8 +258,6 @@ public class LinkedList {
         return false;
     }
 
-    // k = 2
-    // 1 -> 2 -> 3 -> &4 -> 5 -> *
     public Node findKthFromEnd(int k) {
         Node hare = head;
         Node tortoise = head;
@@ -314,10 +312,6 @@ public class LinkedList {
 
         Node current = head;
         Node prev = head;
-
-        // 1, 2, 3
-
-        // 1 -> 1 -> 4 -> 2 -> 5
 
         while (current != null) {
             if (!nodesValue.contains(current.value)) {
